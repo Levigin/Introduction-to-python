@@ -20,25 +20,25 @@ def solve_chess_puzzle(queens: list):
 
 
 def random_check(chess_size: int = 8):
-    chess_board = [[' ' for _ in range(chess_size)] for _ in range(chess_size)]
     counter = 0
-
     while counter < PLACEMENTS:
+        chess_board = [[' ' for _ in range(chess_size)] for _ in range(chess_size)]
         set_num = [_ for _ in range(chess_size)]
         for j in range(chess_size):
             random.shuffle(set_num)
             i = set_num.pop()
             chess_board[j][i] = 'Q'
         chess_board_ = [''.join(row) for row in chess_board]
-
         if solve_chess_puzzle(chess_board_):
+            print(f'\t\t\tSolution: {counter+1}')
             for rows in chess_board:
-                print(f'result: {rows}')
+                print(f'{rows}')
             counter += 1
+            print(f'----------------------------------------')
 
 
 if __name__ == '__main__':
-    random_check()
+    # solution for task 2
     queens_true = [
         ' Q  ',
         '   Q',
@@ -47,3 +47,7 @@ if __name__ == '__main__':
     ]
 
     print(solve_chess_puzzle(queens_true))
+
+    # solution for task 3
+    random_check()
+
