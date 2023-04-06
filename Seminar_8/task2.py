@@ -68,5 +68,5 @@ def get_user_info(json_file: str) -> None:
 
 
 if __name__ == '__main__':
-    names_json('data_prod.txt', 'prod.json')
+    # names_json('data_prod.txt', 'prod.json')
     get_user_info('users.json')
